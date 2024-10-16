@@ -17,7 +17,8 @@ def start():
     if prefs.prefs_exists():
         pass
     else:
-        print("Prefs is not exists")
+        # existing_user = False
+        prefs.create_settings_file()
 
 
 if __name__ == "__main__":
