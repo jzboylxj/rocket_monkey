@@ -37,12 +37,9 @@ def validate_json(input):
 
 
 def get_default_script_paths():
-    path_data = []
-
     # 用户脚本路径
     user_path = get_prefs_folder() + os.sep + "User Actions" + os.sep
-    path_data.append({"name": "User", "path": user_path, "enable": True})
-
+    path_data = [{"name": "User", "path": user_path, "enable": True}]
     # 默认脚本路径
     parentPath = os.path.abspath(os.path.join(relativePath, os.pardir))
     default_path = parentPath + os.sep + "actions" + os.sep
