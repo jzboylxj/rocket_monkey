@@ -18,3 +18,11 @@ class Rig:
         self.ik_joints = build_skeleton(components, "IK")
 
         return
+
+
+def rig_fk_skeleton(fk_joints):
+    if not fk_joints:
+        return
+
+    for fk_joint in fk_joints:
+        pass

@@ -23,14 +23,17 @@ class Editor:
 
         with pm.window(self.builder_object, title=self.window_title):
             with pm.frameLayout(label="General", marginWidth=10, marginHeight=10):
-                with pm.columnLayout(adj=True, rowSpacing=10):
-                    pm.button(
-                        label="Build Leg Guide", command=partial(self.guide.build)
-                    )
-                    pm.button(
-                        label="Build Leg Rig",
-                        command=partial(self.rig.build),
-                    )
+                self.layout_build_components()
+
+    def layout_build_components(self):
+        with pm.columnLayout(adj=True, rowSpacing=10) as layout:
+            pm.button(label="Build Leg Guide", command=partial(self.guide.build))
+            pm.button(
+                label="Build Leg Rig",
+                command=partial(self.rig.build),
+            )
+
+        return layout
 
 
 def showEditor():
